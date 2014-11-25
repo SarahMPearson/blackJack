@@ -18,10 +18,10 @@ h1 ROOMS
             table#rooms
                thead
                   tr
-                     td Owner
-                     td Name
-                     td Password
-                     td Join
+                     td(width=150) Owner
+                     td(width=200) Name
+                     td(width=200) Password
+                     td(width=200) Join
                tbody
                   tr(ng-repeat='room in rooms| orderBy:"createdAt":true')
                      td: div.avatar(style='background-image:url("{{room.avatar}}")')
