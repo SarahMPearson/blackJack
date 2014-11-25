@@ -8,12 +8,11 @@
         msg = $scope.rootuser.username + ': ' + msg;
         //debugger;
         socket.emit('globalChat', msg);
-        //msg = '';
+        $scope.message = '';
       };
 
       socket.on('bGlobalChat', function(data){
         $('#messages').append('<div>' + data + '</div>');
-          //$('#messages').val('');
       });
 
 
