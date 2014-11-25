@@ -11,6 +11,13 @@
         socket.emit('globalChat', {avatar:$rootScope.rootuser.avatar, content:msg});
       };
 
+      $scope.join = function(room){
+        Room.join({name:room.name, password:this.password}).then(function(response){
+          var roomId = response.data.roomId;
+          $state.go('rooms.detail', {roomId:roomId});
+        });
+      };
+
       $scope.create = function(room){
         Room.create(room).then(function(response){
           $scope.rooms.push(response.data);
